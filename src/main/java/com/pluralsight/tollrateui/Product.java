@@ -1,14 +1,14 @@
 package com.pluralsight.tollrateui;
 
-public class TollRate {
+public class Product {
 
     private Integer stationId;
     private Float currentRate;
     private String timestamp;
 
-    public TollRate() {}
+    public Product() {}
 
-    public TollRate(Integer stationId, Float currentRate, String timestamp) {
+    public Product(Integer stationId, Float currentRate, String timestamp) {
         this.stationId = stationId;
         this.currentRate = currentRate;
         this.timestamp = timestamp;

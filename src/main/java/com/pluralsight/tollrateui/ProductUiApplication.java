@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
-public class TollrateUiApplication {
+public class ProductUiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TollrateUiApplication.class, args);
+		SpringApplication.run(ProductUiApplication.class, args);
 	}
 
 	@Bean

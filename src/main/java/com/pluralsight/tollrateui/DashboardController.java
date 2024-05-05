@@ -27,10 +27,10 @@ public class DashboardController {
 
         ReactiveCircuitBreaker rcb = circuitBreakerFactory.create("tollrate-cb"); // circuit breaker
 
-        Mono<TollRate> rate = rcb.run(webClientBuilder.build().get()
+        Mono<Product> rate = rcb.run(webClientBuilder.build().get()
             .uri("http://tollrate-service/tollrateslow/" + stationId)
             .retrieve()
-            .bodyToMono(TollRate.class)
+            .bodyToMono(Product.class)
             , throwable -> getDefaultRate());
 		
 		System.out.println("stationId: " + stationId);
@@ -38,11 +38,11 @@ public class DashboardController {
 		return "dashboard";
 	}
 
-    private Mono<TollRate> getDefaultRate() {
+    private Mono<Product> getDefaultRate() {
 
         System.out.println("Fallback method called");
 
-        return Mono.just(new TollRate(0,2.00f,""));
+        return Mono.just(new Product(0,2.00f,""));
         
     }
     
